@@ -24,10 +24,11 @@ module ropuf(
     input enable, 
     input [1:0] sel,
     //output reg out[0:3]
-    output wire out1, out2, out3, out4,
+    //output wire out1, out2, out3, out4,
     output reg mux_output
     );
 
+wire out1, out2, out3, out4;
 assign out1 = (!(!(enable&out1)));
 assign out2 = (!(!(enable&out2)));
 assign out3 = (!(!(enable&out3)));
