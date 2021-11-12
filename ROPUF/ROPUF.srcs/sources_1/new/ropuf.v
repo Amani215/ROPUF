@@ -1,90 +1,103 @@
-`timescale 1ns / 1ps
-//////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 10/23/2021 09:17:31 PM
-// Design Name: 
-// Module Name: ropuf
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
-//////////////////////////////////////////////////////////////////////////////////
+----------------------------------------------------------------------------------
+-- Company: 
+-- Engineer: 
+-- 
+-- Create Date: 11/12/2021 04:22:02 PM
+-- Design Name: 
+-- Module Name: ropuf - Behavioral
+-- Project Name: 
+-- Target Devices: 
+-- Tool Versions: 
+-- Description: 
+-- 
+-- Dependencies: 
+-- 
+-- Revision:
+-- Revision 0.01 - File Created
+-- Additional Comments:
+-- 
+----------------------------------------------------------------------------------
 
-module ropuf(
-    input enable, 
-    input [1:0] sel,
-    output[1:0] counter1, [1:0] counter2
-    );
 
-//mux 1
-wire out1_1, out2_1, out3_1, out4_1;
-reg mux_output1;
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
 
-assign out1_1 = !(!(!(enable&out1_1)));
-assign out2_1 = !(!(!(enable&out2_1)));
-assign out3_1 = !(!(!(enable&out3_1)));
-assign out4_1 = !(!(!(enable&out4_1)));
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
 
-always @ (out1_1 or out2_1 or out3_1 or out4_1 or sel) begin  
-      case (sel)  
-         2'b00 : mux_output1 = out1_1;  
-         2'b01 : mux_output1 = out2_1;  
-         2'b10 : mux_output1 = out3_1;  
-         2'b11 : mux_output1 = out4_1;  
-      endcase 
- end
- 
- //mux 2
-wire out1_2, out2_2, out3_2, out4_2;
-reg mux_output2;
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx leaf cells in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
 
-assign out1_2 = !(!(!(enable&out1_2)));
-assign out2_2 = !(!(!(enable&out2_2)));
-assign out3_2 = !(!(!(enable&out3_2)));
-assign out4_2 = !(!(!(enable&out4_2)));
+entity ropuf is
+    Port ( enable : in STD_LOGIC;
+           sel : in std_logic_vector(1 downto 0);
+           rst: in std_logic;
+           counter1 : out std_logic_vector(3 downto 0);
+           counter2 : out std_logic_vector(3 downto 0));
+end ropuf;
 
-always @ (out1_2 or out2_2 or out3_2 or out4_2 or sel) begin  
-      case (sel)  
-         2'b00 : mux_output2 = out1_2;  
-         2'b01 : mux_output2 = out2_2;  
-         2'b10 : mux_output2 = out3_2;  
-         2'b11 : mux_output2 = out4_2;  
-      endcase 
- end  
-
-//counters for each mux
-reg [1:0] counter_up1;
-reg [1:0] counter_up2;
-
-initial begin
-    counter_up1<=2'd0;
-    counter_up2<=2'd0;
-end
-
-//mux1
-always @(posedge mux_output1)
+architecture Behavioral of ropuf is
+    signal out1: std_logic_vector (3 downto 0);
+    signal out2: std_logic_vector (3 downto 0);
+    signal mux_result1, mux_result2: std_logic;
+    
+    component ring_oscillator
+        port(enable : in STD_LOGIC;
+             res : inout STD_LOGIC);
+    end component;
+    
+    component mux_4to1
+        port(x : in STD_LOGIC_VECTOR(3 downto 0);     
+             sel: in STD_LOGIC_VECTOR(1 downto 0);   
+             res: out STD_LOGIC);
+    end component;
+    
+    component counter
+        port(clk : in STD_LOGIC;
+             rst : in STD_LOGIC;
+             res : out std_logic_vector(3 downto 0));
+    end component;
 begin
- counter_up1 <= counter_up1 + 2'd1;
-end 
-assign counter1 = counter_up1;
+    --first half of the circuit
+    ro1_1: ring_oscillator
+        port map(enable, out1(0));
+    ro1_2: ring_oscillator
+        port map(enable, out1(1));
+    ro1_3: ring_oscillator
+        port map(enable, out1(2));
+    ro1_4: ring_oscillator
+        port map(enable, out1(3));
+    
+    mux1: mux_4to1
+        port map(x=>out1,
+                 sel => sel,
+                 res=>mux_result1);
+                 
+    c1: counter
+        port map(clk => mux_result1,
+                 rst => rst,
+                 res => counter1);
 
-//mux2
-always @(posedge mux_output2)
-begin
- counter_up2 <= counter_up2 + 2'd1;
-end 
-assign counter2 = counter_up2;
-
-//compare the counters
-//...
-
-endmodule
+--second half of the circuit
+    ro2_1: ring_oscillator
+        port map(enable, out2(0));
+    ro2_2: ring_oscillator
+        port map(enable, out2(1));
+    ro2_3: ring_oscillator
+        port map(enable, out2(2));
+    ro2_4: ring_oscillator
+        port map(enable, out2(3));
+    
+    mux2: mux_4to1
+        port map(x=>out2,
+                 sel => sel,
+                 res=>mux_result2);
+                 
+    c2: counter
+        port map(clk => mux_result2,
+                 rst => rst,
+                 res => counter2);
+end Behavioral;
