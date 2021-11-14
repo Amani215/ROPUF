@@ -35,14 +35,14 @@ entity ropuf is
     Port ( enable : in STD_LOGIC;
            sel : in std_logic_vector(1 downto 0);
            rst: in std_logic;
-           counter1 : out std_logic_vector(3 downto 0);
-           counter2 : out std_logic_vector(3 downto 0));
+           finalResult: out std_logic);
 end ropuf;
 
 architecture Behavioral of ropuf is
     signal out1: std_logic_vector (3 downto 0);
     signal out2: std_logic_vector (3 downto 0);
     signal mux_result1, mux_result2: std_logic;
+    signal counter1, counter2 : std_logic_vector(3 downto 0);
     
     component ring_oscillator
         port(enable : in STD_LOGIC;
@@ -59,6 +59,12 @@ architecture Behavioral of ropuf is
         port(clk : in STD_LOGIC;
              rst : in STD_LOGIC;
              res : out std_logic_vector(3 downto 0));
+    end component;
+    
+    component comparator
+        port(in1: in std_logic_vector(3 downto 0);
+             in2: in std_logic_vector(3 downto 0);
+             res: out std_logic);
     end component;
 begin
     --first half of the circuit
@@ -100,4 +106,10 @@ begin
         port map(clk => mux_result2,
                  rst => rst,
                  res => counter2);
+
+--comparing the results:
+    comp: comparator
+        port map(in1 => counter1, 
+                 in2 => counter2,
+                 res => finalResult);
 end Behavioral;
