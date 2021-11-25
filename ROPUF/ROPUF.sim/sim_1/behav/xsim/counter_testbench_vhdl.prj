@@ -1,0 +1,7 @@
+# compile vhdl design source files
+vhdl xil_defaultlib  \
+"../../../../ROPUF.srcs/sources_1/new/counter.vhd" \
+"../../../../ROPUF.srcs/sim_1/new/counter_testbench.vhd" \
+
+# Do not sort compile order
+nosort
