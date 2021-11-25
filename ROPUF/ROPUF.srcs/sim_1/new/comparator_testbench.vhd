@@ -60,6 +60,7 @@ begin
         in1 <= "0001"; in2 <= "0000";
         wait for 200 ns;
         in1 <= "0001"; in2 <= "0001";
+        wait for 200ns;
     end process;
 
 end Behavioral;
