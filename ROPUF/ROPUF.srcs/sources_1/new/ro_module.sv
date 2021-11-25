@@ -32,11 +32,26 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity ring_oscillator is
-    Port ( enable : in STD_LOGIC;
+    Port ( innerClock: in std_logic;
+           enable : in STD_LOGIC;
            res : inout STD_LOGIC);
 end ring_oscillator;
 
 architecture dataflow of ring_oscillator is
 begin
-    res <= not(not(not(enable and res)));
+    process(enable, innerClock, res)
+        variable prev: std_logic := '0';
+    begin
+         if(enable='1') then
+         if(innerClock' event and innerClock='1') then
+            res <= not(not(not(enable and prev)));
+            prev := not prev;
+            end if;
+         elsif (enable='0') then
+            res <= prev;
+         else
+            res<= '0';
+            prev := '0';
+         end if;
+    end process;
 end dataflow;
