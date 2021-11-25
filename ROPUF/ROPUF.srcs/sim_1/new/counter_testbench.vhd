@@ -36,7 +36,7 @@ entity counter_testbench is
 end counter_testbench;
 
 architecture Behavioral of counter_testbench is
-    signal clk : STD_LOGIC;
+    signal clk : STD_LOGIC := '0';
     signal rst : STD_LOGIC;
     signal res : std_logic_vector(0 to 3);
     
@@ -47,22 +47,16 @@ architecture Behavioral of counter_testbench is
     end component;
     
 begin
+    clk <= not clk after 10ns;
+    
     DUT: counter
         PORT MAP(clk, rst, res);
-        
-    clock_process :process
-	BEGIN
-	   clk <= '0';
-	   wait for 10 ns;
-	   clk <= '1';
-	   wait for 10 ns;
-	END PROCESS;
 
     stim_proc: process
     begin        
        rst <= '1';
        wait for 20 ns;    
        rst <= '0';
-       wait;
+       wait for 200ns;
     end process;
 end Behavioral;
