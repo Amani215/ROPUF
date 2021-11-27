@@ -40,6 +40,13 @@ end comparator;
 architecture dataflow of comparator is
 
 begin
-    res <= '0' when in1 >= in2 else '1';
+    process(in1,in2)
+    begin
+        if(in1>=in2) then
+            res<='0';
+        else
+            res<='1';
+        end if;
+    end process;
 
 end dataflow;

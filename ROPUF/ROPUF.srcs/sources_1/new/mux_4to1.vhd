@@ -40,11 +40,15 @@ end mux_4to1;
 architecture dataflow of mux_4to1 is
 
 begin
-    with sel select
-        res <= x(0) when "00",
-               x(1) when "01",
-               x(2) when "10",
-               x(3) when "11",
-               '0' when others;
+    process(sel, x)
+    begin
+        case sel is 
+            when "00" => res <= x(0);
+            when "01" => res <= x(1);
+            when "10" => res <= x(2);
+            when "11" => res <= x(3);
+            when others => res <= '0';
+        end case;
+    end process;
 end dataflow;
 

@@ -29,7 +29,7 @@ entity counter is
 end counter;
 
 architecture Behavioral of counter is
-    signal count : std_logic_vector(3 downto 0);
+    signal count : std_logic_vector(3 downto 0):="0000";
 begin
     process(rst,clk)
         begin
@@ -38,6 +38,7 @@ begin
             elsif (rising_edge(clk)) then 
                 count <= count + "0001";
             end if;
+            res <= count;
     end process;
-    res <= count;
+    
 end Behavioral;

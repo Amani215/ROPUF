@@ -32,7 +32,8 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity ropuf is
-    Port ( clk: in STD_LOGIC;
+    Port ( clk1: in STD_LOGIC;
+           clk2: in STD_LOGIC;
            enable : in STD_LOGIC;
            sel : in std_logic_vector(1 downto 0);
            rst: in std_logic;
@@ -71,13 +72,13 @@ architecture Behavioral of ropuf is
 begin
     --first half of the circuit
     ro1_1: ring_oscillator
-        port map(clk, enable, out1(0));
+        port map(clk1, enable, out1(0));
     ro1_2: ring_oscillator
-        port map(clk, enable, out1(1));
+        port map(clk1, enable, out1(1));
     ro1_3: ring_oscillator
-        port map(clk, enable, out1(2));
+        port map(clk1, enable, out1(2));
     ro1_4: ring_oscillator
-        port map(clk, enable, out1(3));
+        port map(clk1, enable, out1(3));
     
     mux1: mux_4to1
         port map(x=>out1,
@@ -91,13 +92,13 @@ begin
 
 --second half of the circuit
     ro2_1: ring_oscillator
-        port map(clk, enable, out2(0));
+        port map(clk2, enable, out2(0));
     ro2_2: ring_oscillator
-        port map(clk, enable, out2(1));
+        port map(clk2, enable, out2(1));
     ro2_3: ring_oscillator
-        port map(clk, enable, out2(2));
+        port map(clk2, enable, out2(2));
     ro2_4: ring_oscillator
-        port map(clk, enable, out2(3));
+        port map(clk2, enable, out2(3));
     
     mux2: mux_4to1
         port map(x=>out2,
