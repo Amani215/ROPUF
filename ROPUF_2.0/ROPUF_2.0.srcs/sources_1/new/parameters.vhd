@@ -24,4 +24,5 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 package parameters is 
     constant NUM_OF_INVERTERS : natural := 3;
+    constant MUX_ENTRIES : natural := 4;
 end package;

@@ -2,11 +2,11 @@
 # Vivado v2020.2 (64-bit)
 # SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
 # IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-# Start of session at: Sat Nov 27 16:28:12 2021
-# Process ID: 7052
+# Start of session at: Sat Nov 27 18:52:42 2021
+# Process ID: 16208
 # Current directory: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1
-# Command line: vivado.exe -log delay_line.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source delay_line.tcl
-# Log file: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/delay_line.vds
+# Command line: vivado.exe -log ring_oscillator.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ring_oscillator.tcl
+# Log file: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/ring_oscillator.vds
 # Journal file: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
-source delay_line.tcl -notrace
+source ring_oscillator.tcl -notrace

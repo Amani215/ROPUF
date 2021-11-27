@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log delay_line.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source delay_line.tcl
+EAStep vivado -log ring_oscillator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ring_oscillator.tcl
