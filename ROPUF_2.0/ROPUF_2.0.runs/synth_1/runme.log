@@ -1,6 +1,6 @@
 
 *** Running vivado
-    with args -log ring_oscillator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ring_oscillator.tcl
+    with args -log multiplexer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source multiplexer.tcl
 
 
 
@@ -9,48 +9,43 @@
   **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
     ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 
-source ring_oscillator.tcl -notrace
-Command: synth_design -top ring_oscillator -part xc7a12tcpg238-1
+source multiplexer.tcl -notrace
+Command: synth_design -top multiplexer -part xc7a12tcpg238-1
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a12t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a12t'
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 16244
+INFO: [Synth 8-7075] Helper process launched with PID 15324
 ---------------------------------------------------------------------------------
-Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Starting Synthesize : Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'ring_oscillator' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ring_oscillator.vhd:32]
-INFO: [Synth 8-638] synthesizing module 'delay_line' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/delay_line.vhd:33]
-INFO: [Synth 8-3491] module 'And_gate' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/And_gate.vhd:24' bound to instance 'andg' of component 'And_gate' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/delay_line.vhd:48]
-INFO: [Synth 8-638] synthesizing module 'And_gate' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/And_gate.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'And_gate' (1#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/And_gate.vhd:30]
-INFO: [Synth 8-638] synthesizing module 'Inv_gate' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/Inv_gate.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'Inv_gate' (2#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/Inv_gate.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'delay_line' (3#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/delay_line.vhd:33]
-INFO: [Synth 8-256] done synthesizing module 'ring_oscillator' (4#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ring_oscillator.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'multiplexer' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/multiplexer.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'multiplexer' (1#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/multiplexer.vhd:31]
 ---------------------------------------------------------------------------------
-Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Constraint Validation : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a12tcpg238-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Device 21-403] Loading part xc7a12tcpg238-1
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
++---Muxes : 
+	   4 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -68,20 +63,20 @@ No constraint files found.
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 No constraint files found.
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Timing Optimization : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:17 ; elapsed = 00:00:20 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Technology Mapping : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -99,37 +94,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -145,40 +140,35 @@ Report Cell Usage:
 +------+-----+------+
 |      |Cell |Count |
 +------+-----+------+
-|1     |LUT1 |    12|
-|2     |LUT2 |     4|
-|3     |IBUF |     1|
-|4     |OBUF |     4|
+|1     |LUT6 |     1|
+|2     |IBUF |     6|
+|3     |OBUF |     1|
 +------+-----+------+
 
 Report Instance Areas: 
-+------+-------------------------------------------+-------------+------+
-|      |Instance                                   |Module       |Cells |
-+------+-------------------------------------------+-------------+------+
-|1     |top                                        |             |    21|
-|2     |  \inst_inverter_chain[0].inst_delay_line  |delay_line   |     4|
-|3     |  \inst_inverter_chain[1].inst_delay_line  |delay_line_0 |     4|
-|4     |  \inst_inverter_chain[2].inst_delay_line  |delay_line_1 |     4|
-|5     |  \inst_inverter_chain[3].inst_delay_line  |delay_line_2 |     4|
-+------+-------------------------------------------+-------------+------+
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     8|
++------+---------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
-Synthesis Optimization Complete : Time (s): cpu = 00:00:24 ; elapsed = 00:00:27 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1019.219 ; gain = 0.000
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1019.219 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1018.152 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1019.219 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-19 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+12 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:32 . Memory (MB): peak = 1018.152 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/ring_oscillator.dcp' has been generated.
-INFO: [runtcl-4] Executing : report_utilization -file ring_oscillator_utilization_synth.rpt -pb ring_oscillator_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Nov 27 18:53:19 2021...
+synth_design: Time (s): cpu = 00:00:21 ; elapsed = 00:00:24 . Memory (MB): peak = 1019.219 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/multiplexer.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file multiplexer_utilization_synth.rpt -pb multiplexer_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 27 19:24:03 2021...

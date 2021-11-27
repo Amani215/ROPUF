@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log ring_oscillator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ring_oscillator.tcl" );
+         "-log multiplexer.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source multiplexer.tcl" );
 
 
 

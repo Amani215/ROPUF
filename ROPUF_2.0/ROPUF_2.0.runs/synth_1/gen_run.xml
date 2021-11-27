@@ -1,49 +1,60 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a12tcpg238-1" LaunchTime="1638035557">
-  <File Type="PA-TCL" Name="ring_oscillator.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="ring_oscillator_drc_synth.rpt"/>
-  <File Type="REPORTS-TCL" Name="ring_oscillator_reports.tcl"/>
-  <File Type="RDS-RDS" Name="ring_oscillator.vds"/>
-  <File Type="RDS-UTIL" Name="ring_oscillator_utilization_synth.rpt"/>
-  <File Type="RDS-UTIL-PB" Name="ring_oscillator_utilization_synth.pb"/>
-  <File Type="RDS-DCP" Name="ring_oscillator.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ring_oscillator_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="ring_oscillator_timing_summary_synth.pb"/>
+<GenRun Id="synth_1" LaunchPart="xc7a12tcpg238-1" LaunchTime="1638037408">
+  <File Type="PA-TCL" Name="multiplexer.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="multiplexer_drc_synth.rpt"/>
+  <File Type="REPORTS-TCL" Name="multiplexer_reports.tcl"/>
+  <File Type="RDS-RDS" Name="multiplexer.vds"/>
+  <File Type="RDS-UTIL" Name="multiplexer_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="multiplexer_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="multiplexer.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="multiplexer_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="multiplexer_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/multiplexer.vhd">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/And_gate.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Inv_gate.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/parameters.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/delay_line.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/ring_oscillator.vhd">
       <FileInfo>
+        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
     <Config>
       <Option Name="DesignMode" Val="RTL"/>
-      <Option Name="TopModule" Val="ring_oscillator"/>
+      <Option Name="TopModule" Val="multiplexer"/>
     </Config>
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1">

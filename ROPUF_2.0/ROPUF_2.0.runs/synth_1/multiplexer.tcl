@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/ring_oscillator.tcl"
+  variable script "C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/multiplexer.tcl"
   variable category "vivado_synth"
 }
 
@@ -87,13 +87,7 @@ set_property ip_output_repo c:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib {
-  C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/And_gate.vhd
-  C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/Inv_gate.vhd
-  C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/parameters.vhd
-  C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/delay_line.vhd
-  C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ring_oscillator.vhd
-}
+read_vhdl -library xil_defaultlib C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/multiplexer.vhd
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -107,7 +101,7 @@ set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }
-synth_design -top ring_oscillator -part xc7a12tcpg238-1
+synth_design -top multiplexer -part xc7a12tcpg238-1
 OPTRACE "synth_design" END { }
 if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
  send_msg_id runtcl-6 info "Synthesis results are not added to the cache due to CRITICAL_WARNING"
@@ -117,10 +111,10 @@ if { [get_msg_config -count -severity {CRITICAL WARNING}] > 0 } {
 OPTRACE "write_checkpoint" START { CHECKPOINT }
 # disable binary constraint mode for synth run checkpoints
 set_param constraints.enableBinaryConstraints false
-write_checkpoint -force -noxdef ring_oscillator.dcp
+write_checkpoint -force -noxdef multiplexer.dcp
 OPTRACE "write_checkpoint" END { }
 OPTRACE "synth reports" START { REPORT }
-create_report "synth_1_synth_report_utilization_0" "report_utilization -file ring_oscillator_utilization_synth.rpt -pb ring_oscillator_utilization_synth.pb"
+create_report "synth_1_synth_report_utilization_0" "report_utilization -file multiplexer_utilization_synth.rpt -pb multiplexer_utilization_synth.pb"
 OPTRACE "synth reports" END { }
 file delete __synthesis_is_running__
 close [open __synthesis_is_complete__ w]
