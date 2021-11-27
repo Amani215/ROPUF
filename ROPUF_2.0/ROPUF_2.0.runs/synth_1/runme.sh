@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log And_gate.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source And_gate.tcl
+EAStep vivado -log delay_line.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source delay_line.tcl
