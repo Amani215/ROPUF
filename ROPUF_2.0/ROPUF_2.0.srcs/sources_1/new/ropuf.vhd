@@ -34,9 +34,9 @@ end ropuf;
 architecture struct of ropuf is 
     attribute dont_touch : string;
     
-    signal ro1_output: std_logic_vector (3 downto 0);
+    signal ro1_output: std_logic_vector (3 downto 0):="0000";
         attribute dont_touch of ro1_output: signal is "true";
-    signal ro2_output: std_logic_vector (3 downto 0);
+    signal ro2_output: std_logic_vector (3 downto 0):="0000";
         attribute dont_touch of ro2_output: signal is "true";
     signal mux1_output: std_logic;
         attribute dont_touch of mux1_output: signal is "true";
