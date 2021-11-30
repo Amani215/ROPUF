@@ -1,14 +1,14 @@
-
-*** Running vivado
-    with args -log ropuf.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ropuf.tcl
-
-
-
-****** Vivado v2020.2 (64-bit)
-  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
-  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
-    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
-
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Nov 30 19:27:08 2021
+# Process ID: 2284
+# Current directory: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1
+# Command line: vivado.exe -log ropuf.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ropuf.tcl
+# Log file: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/ropuf.vds
+# Journal file: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
 source ropuf.tcl -notrace
 Command: synth_design -top ropuf -part xc7a12tcpg238-1
 Starting synth_design
