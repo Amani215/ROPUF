@@ -1,7 +1,7 @@
 {
   "design": {
     "design_info": {
-      "boundary_crc": "0xC4496E4913857CE7",
+      "boundary_crc": "0x859F300166E1B2B6",
       "device": "xc7a12tcpg238-1",
       "gen_directory": "../../../../ROPUF_2.0.gen/sources_1/bd/system",
       "name": "system",
@@ -35,7 +35,8 @@
       "axi_uartlite_0": "",
       "axi_gpio_0": "",
       "axi_gpio_1": "",
-      "axi_gpio_2": ""
+      "axi_gpio_2": "",
+      "ropuf_0": ""
     },
     "interface_ports": {
       "uart": {
@@ -69,26 +70,6 @@
             "value_src": "default"
           }
         }
-      },
-      "oenable": {
-        "direction": "O",
-        "left": "0",
-        "right": "0"
-      },
-      "iresponse": {
-        "direction": "I",
-        "left": "0",
-        "right": "0"
-      },
-      "ochallenge": {
-        "direction": "O",
-        "left": "3",
-        "right": "0"
-      },
-      "orst": {
-        "direction": "O",
-        "left": "0",
-        "right": "0"
       }
     },
     "components": {
@@ -852,28 +833,28 @@
               "m01_couplers/M_AXI"
             ]
           },
-          "m02_couplers_to_microblaze_0_axi_periph": {
-            "interface_ports": [
-              "M02_AXI",
-              "m02_couplers/M_AXI"
-            ]
-          },
           "xbar_to_m01_couplers": {
             "interface_ports": [
               "xbar/M01_AXI",
               "m01_couplers/S_AXI"
             ]
           },
-          "xbar_to_m02_couplers": {
+          "m02_couplers_to_microblaze_0_axi_periph": {
             "interface_ports": [
-              "xbar/M02_AXI",
-              "m02_couplers/S_AXI"
+              "M02_AXI",
+              "m02_couplers/M_AXI"
             ]
           },
           "m03_couplers_to_microblaze_0_axi_periph": {
             "interface_ports": [
               "M03_AXI",
               "m03_couplers/M_AXI"
+            ]
+          },
+          "xbar_to_m02_couplers": {
+            "interface_ports": [
+              "xbar/M02_AXI",
+              "m02_couplers/S_AXI"
             ]
           },
           "xbar_to_m03_couplers": {
@@ -1039,6 +1020,34 @@
             "value": "1"
           }
         }
+      },
+      "ropuf_0": {
+        "vlnv": "xilinx.com:module_ref:ropuf:1.0",
+        "xci_name": "system_ropuf_0_0",
+        "xci_path": "ip\\system_ropuf_0_0\\system_ropuf_0_0.xci",
+        "inst_hier_path": "ropuf_0",
+        "reference_info": {
+          "ref_type": "hdl",
+          "ref_name": "ropuf",
+          "boundary_crc": "0x0"
+        },
+        "ports": {
+          "enable": {
+            "direction": "I"
+          },
+          "challenge": {
+            "direction": "I",
+            "left": "3",
+            "right": "0"
+          },
+          "rst": {
+            "type": "rst",
+            "direction": "I"
+          },
+          "finalResult": {
+            "direction": "O"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -1181,25 +1190,25 @@
       "axi_gpio_1_gpio_io_o": {
         "ports": [
           "axi_gpio_1/gpio_io_o",
-          "oenable"
-        ]
-      },
-      "gpio2_io_i_0_1": {
-        "ports": [
-          "iresponse",
-          "axi_gpio_1/gpio2_io_i"
-        ]
-      },
-      "axi_gpio_0_gpio_io_o": {
-        "ports": [
-          "axi_gpio_0/gpio_io_o",
-          "ochallenge"
+          "ropuf_0/enable"
         ]
       },
       "axi_gpio_2_gpio_io_o": {
         "ports": [
           "axi_gpio_2/gpio_io_o",
-          "orst"
+          "ropuf_0/rst"
+        ]
+      },
+      "axi_gpio_0_gpio_io_o": {
+        "ports": [
+          "axi_gpio_0/gpio_io_o",
+          "ropuf_0/challenge"
+        ]
+      },
+      "ropuf_0_finalResult": {
+        "ports": [
+          "ropuf_0/finalResult",
+          "axi_gpio_1/gpio2_io_i"
         ]
       }
     },
