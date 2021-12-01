@@ -25,7 +25,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 use work.parameters.all;
 
 entity ropuf is
-    Port (enable : in STD_LOGIC;
+    Port (enable : in std_logic;
           challenge : in std_logic_vector(3 downto 0); --2 for mux1 2 for mux2
           rst: in std_logic;                           --reset for counters
           finalResult: out std_logic );
