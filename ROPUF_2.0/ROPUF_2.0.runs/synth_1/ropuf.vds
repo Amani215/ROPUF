@@ -1,0 +1,227 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Thu Dec  9 19:43:46 2021
+# Process ID: 5684
+# Current directory: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1
+# Command line: vivado.exe -log ropuf.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source ropuf.tcl
+# Log file: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/ropuf.vds
+# Journal file: C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source ropuf.tcl -notrace
+Command: synth_design -top ropuf -part xc7a12tcpg238-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a12t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a12t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 5992
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'ropuf' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:34]
+INFO: [Synth 8-3491] module 'ring_oscillator' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ring_oscillator.vhd:27' bound to instance 'ro1' of component 'ring_oscillator' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:76]
+INFO: [Synth 8-638] synthesizing module 'ring_oscillator' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ring_oscillator.vhd:32]
+INFO: [Synth 8-638] synthesizing module 'delay_line' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/delay_line.vhd:33]
+INFO: [Synth 8-3491] module 'And_gate' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/And_gate.vhd:24' bound to instance 'andg' of component 'And_gate' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/delay_line.vhd:48]
+INFO: [Synth 8-638] synthesizing module 'And_gate' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/And_gate.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'And_gate' (1#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/And_gate.vhd:30]
+INFO: [Synth 8-638] synthesizing module 'Inv_gate' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/Inv_gate.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'Inv_gate' (2#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/Inv_gate.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'delay_line' (3#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/delay_line.vhd:33]
+INFO: [Synth 8-256] done synthesizing module 'ring_oscillator' (4#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ring_oscillator.vhd:32]
+INFO: [Synth 8-3491] module 'multiplexer' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/multiplexer.vhd:25' bound to instance 'mux1' of component 'multiplexer' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:79]
+INFO: [Synth 8-638] synthesizing module 'multiplexer' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/multiplexer.vhd:31]
+INFO: [Synth 8-256] done synthesizing module 'multiplexer' (5#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/multiplexer.vhd:31]
+INFO: [Synth 8-3491] module 'counter' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/counter.vhd:34' bound to instance 'c1' of component 'counter' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:82]
+INFO: [Synth 8-638] synthesizing module 'counter' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/counter.vhd:40]
+WARNING: [Synth 8-614] signal 'count' is read in the process but is not in the sensitivity list [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/counter.vhd:43]
+INFO: [Synth 8-256] done synthesizing module 'counter' (6#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/counter.vhd:40]
+INFO: [Synth 8-3491] module 'ring_oscillator' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ring_oscillator.vhd:27' bound to instance 'ro2' of component 'ring_oscillator' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:86]
+INFO: [Synth 8-3491] module 'multiplexer' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/multiplexer.vhd:25' bound to instance 'mux2' of component 'multiplexer' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:89]
+INFO: [Synth 8-3491] module 'counter' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/counter.vhd:34' bound to instance 'c2' of component 'counter' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:92]
+INFO: [Synth 8-3491] module 'comparator' declared at 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/comparator.vhd:34' bound to instance 'comp' of component 'comparator' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:96]
+INFO: [Synth 8-638] synthesizing module 'comparator' [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/comparator.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'comparator' (7#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/comparator.vhd:41]
+INFO: [Synth 8-256] done synthesizing module 'ropuf' (8#1) [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/ropuf.vhd:34]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a12tcpg238-1
+INFO: [Device 21-403] Loading part xc7a12tcpg238-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 2     
++---Registers : 
+	                8 Bit    Registers := 2     
++---Muxes : 
+	   4 Input    1 Bit        Muxes := 2     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 40 (col length:40)
+BRAMs: 40 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:15 ; elapsed = 00:00:17 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/counter.vhd:46]
+WARNING: [Synth 8-5396] Clock pin C has keep related attribute (keep/mark_debug/dont_touch) which could create extra logic on its net [C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.srcs/sources_1/new/counter.vhd:46]
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |     1|
+|2     |LUT1   |    26|
+|3     |LUT2   |    13|
+|4     |LUT3   |     4|
+|5     |LUT4   |    10|
+|6     |LUT5   |     2|
+|7     |LUT6   |     6|
+|8     |FDCE   |    16|
+|9     |IBUF   |     6|
+|10    |OBUF   |     1|
++------+-------+------+
+
+Report Instance Areas: 
++------+------------------------------------------+------------------+------+
+|      |Instance                                  |Module            |Cells |
++------+------------------------------------------+------------------+------+
+|1     |top                                       |                  |    85|
+|2     |  c1                                      |counter           |    17|
+|3     |  c2                                      |counter_0         |    17|
+|4     |  comp                                    |comparator        |    10|
+|5     |  mux1                                    |multiplexer       |     1|
+|6     |  mux2                                    |multiplexer_1     |     1|
+|7     |  ro1                                     |ring_oscillator   |    16|
+|8     |    \inst_delay_lines[0].inst_delay_line  |delay_line_6      |     4|
+|9     |    \inst_delay_lines[1].inst_delay_line  |delay_line_7      |     4|
+|10    |    \inst_delay_lines[2].inst_delay_line  |delay_line_8      |     4|
+|11    |    \inst_delay_lines[3].inst_delay_line  |delay_line_9      |     4|
+|12    |  ro2                                     |ring_oscillator_2 |    16|
+|13    |    \inst_delay_lines[0].inst_delay_line  |delay_line        |     4|
+|14    |    \inst_delay_lines[1].inst_delay_line  |delay_line_3      |     4|
+|15    |    \inst_delay_lines[2].inst_delay_line  |delay_line_4      |     4|
+|16    |    \inst_delay_lines[3].inst_delay_line  |delay_line_5      |     4|
++------+------------------------------------------+------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 3 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1015.121 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1015.121 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1015.121 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+36 Infos, 3 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:24 ; elapsed = 00:00:28 . Memory (MB): peak = 1015.121 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/asus/Desktop/Studies/ropuf/ROPUF_2.0/ROPUF_2.0.runs/synth_1/ropuf.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file ropuf_utilization_synth.rpt -pb ropuf_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Thu Dec  9 19:44:19 2021...

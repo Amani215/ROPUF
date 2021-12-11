@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log ring_oscillator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ring_oscillator.tcl
+EAStep vivado -log ropuf.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source ropuf.tcl

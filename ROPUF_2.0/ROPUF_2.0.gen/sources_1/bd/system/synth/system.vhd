@@ -1,12 +1,95 @@
 --Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2020.2 (win64) Build 3064766 Wed Nov 18 09:12:45 MST 2020
---Date        : Wed Dec  1 18:18:34 2021
+--Date        : Thu Dec  9 19:40:17 2021
 --Host        : LAPTOP-5PQ60LVJ running 64-bit major release  (build 9200)
 --Command     : generate_target system.bd
 --Design      : system
 --Purpose     : IP block netlist
 ----------------------------------------------------------------------------------
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+library UNISIM;
+use UNISIM.VCOMPONENTS.ALL;
+entity h_clk_rst_imp_1D3DBPP is
+  port (
+    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    iclk : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    mb_reset : out STD_LOGIC;
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    slowest_sync_clk : out STD_LOGIC
+  );
+end h_clk_rst_imp_1D3DBPP;
+
+architecture STRUCTURE of h_clk_rst_imp_1D3DBPP is
+  component system_clk_wiz_1_0 is
+  port (
+    clk_in1 : in STD_LOGIC;
+    oclk_out1 : out STD_LOGIC;
+    locked : out STD_LOGIC
+  );
+  end component system_clk_wiz_1_0;
+  component system_xlconstant_0_0 is
+  port (
+    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component system_xlconstant_0_0;
+  component system_rst_clk_wiz_1_100M_0 is
+  port (
+    slowest_sync_clk : in STD_LOGIC;
+    ext_reset_in : in STD_LOGIC;
+    aux_reset_in : in STD_LOGIC;
+    mb_debug_sys_rst : in STD_LOGIC;
+    dcm_locked : in STD_LOGIC;
+    mb_reset : out STD_LOGIC;
+    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
+    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
+    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
+  );
+  end component system_rst_clk_wiz_1_100M_0;
+  signal clk_in1_0_1 : STD_LOGIC;
+  signal clk_wiz_1_locked : STD_LOGIC;
+  signal mdm_1_debug_sys_rst : STD_LOGIC;
+  signal microblaze_0_Clk : STD_LOGIC;
+  signal rst_clk_wiz_1_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal rst_clk_wiz_1_100M_mb_reset : STD_LOGIC;
+  signal rst_clk_wiz_1_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+  signal NLW_rst_clk_wiz_1_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
+begin
+  bus_struct_reset(0) <= rst_clk_wiz_1_100M_bus_struct_reset(0);
+  clk_in1_0_1 <= iclk;
+  mb_reset <= rst_clk_wiz_1_100M_mb_reset;
+  mdm_1_debug_sys_rst <= mb_debug_sys_rst;
+  peripheral_aresetn(0) <= rst_clk_wiz_1_100M_peripheral_aresetn(0);
+  slowest_sync_clk <= microblaze_0_Clk;
+clk_wiz_1: component system_clk_wiz_1_0
+     port map (
+      clk_in1 => clk_in1_0_1,
+      locked => clk_wiz_1_locked,
+      oclk_out1 => microblaze_0_Clk
+    );
+rst_clk_wiz_1_100M: component system_rst_clk_wiz_1_100M_0
+     port map (
+      aux_reset_in => xlconstant_0_dout(0),
+      bus_struct_reset(0) => rst_clk_wiz_1_100M_bus_struct_reset(0),
+      dcm_locked => clk_wiz_1_locked,
+      ext_reset_in => xlconstant_0_dout(0),
+      interconnect_aresetn(0) => NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED(0),
+      mb_debug_sys_rst => mdm_1_debug_sys_rst,
+      mb_reset => rst_clk_wiz_1_100M_mb_reset,
+      peripheral_aresetn(0) => rst_clk_wiz_1_100M_peripheral_aresetn(0),
+      peripheral_reset(0) => NLW_rst_clk_wiz_1_100M_peripheral_reset_UNCONNECTED(0),
+      slowest_sync_clk => microblaze_0_Clk
+    );
+xlconstant_0: component system_xlconstant_0_0
+     port map (
+      dout(0) => xlconstant_0_dout(0)
+    );
+end STRUCTURE;
 library IEEE;
 use IEEE.STD_LOGIC_1164.ALL;
 library UNISIM;
@@ -2045,7 +2128,7 @@ entity system is
     uart_txd : out STD_LOGIC
   );
   attribute CORE_GENERATION_INFO : string;
-  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=24,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=8,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=1,da_mb_cnt=1,synth_mode=OOC_per_IP}";
+  attribute CORE_GENERATION_INFO of system : entity is "system,IP_Integrator,{x_ipVendor=xilinx.com,x_ipLibrary=BlockDiagram,x_ipName=system,x_ipVersion=1.00.a,x_ipLanguage=VHDL,numBlks=25,numReposBlks=16,numNonXlnxBlks=0,numHierBlks=9,maxHierDepth=1,numSysgenBlks=0,numHlsBlks=0,numHdlrefBlks=1,numPkgbdBlks=0,bdsource=USER,da_axi4_cnt=3,da_board_cnt=1,da_mb_cnt=1,synth_mode=OOC_per_IP}";
   attribute HW_HANDOFF : string;
   attribute HW_HANDOFF of system : entity is "system.hwdef";
 end system;
@@ -2141,32 +2224,6 @@ architecture STRUCTURE of system is
     Dbg_Disable_0 : out STD_LOGIC
   );
   end component system_mdm_1_0;
-  component system_clk_wiz_1_0 is
-  port (
-    locked : out STD_LOGIC;
-    clk_in1 : in STD_LOGIC;
-    oclk_out1 : out STD_LOGIC
-  );
-  end component system_clk_wiz_1_0;
-  component system_rst_clk_wiz_1_100M_0 is
-  port (
-    slowest_sync_clk : in STD_LOGIC;
-    ext_reset_in : in STD_LOGIC;
-    aux_reset_in : in STD_LOGIC;
-    mb_debug_sys_rst : in STD_LOGIC;
-    dcm_locked : in STD_LOGIC;
-    mb_reset : out STD_LOGIC;
-    bus_struct_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_reset : out STD_LOGIC_VECTOR ( 0 to 0 );
-    interconnect_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 );
-    peripheral_aresetn : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component system_rst_clk_wiz_1_100M_0;
-  component system_xlconstant_0_0 is
-  port (
-    dout : out STD_LOGIC_VECTOR ( 0 to 0 )
-  );
-  end component system_xlconstant_0_0;
   component system_axi_uartlite_0_0 is
   port (
     s_axi_aclk : in STD_LOGIC;
@@ -2280,7 +2337,6 @@ architecture STRUCTURE of system is
   signal axi_uartlite_0_UART_RxD : STD_LOGIC;
   signal axi_uartlite_0_UART_TxD : STD_LOGIC;
   signal clk_in1_0_1 : STD_LOGIC;
-  signal clk_wiz_1_locked : STD_LOGIC;
   signal mdm_1_debug_sys_rst : STD_LOGIC;
   signal microblaze_0_Clk : STD_LOGIC;
   signal microblaze_0_axi_dp_ARADDR : STD_LOGIC_VECTOR ( 31 downto 0 );
@@ -2419,12 +2475,9 @@ architecture STRUCTURE of system is
   signal rst_clk_wiz_1_100M_bus_struct_reset : STD_LOGIC_VECTOR ( 0 to 0 );
   signal rst_clk_wiz_1_100M_mb_reset : STD_LOGIC;
   signal rst_clk_wiz_1_100M_peripheral_aresetn : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal xlconstant_0_dout : STD_LOGIC_VECTOR ( 0 to 0 );
   signal NLW_axi_uartlite_0_interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_mdm_1_Interrupt_UNCONNECTED : STD_LOGIC;
   signal NLW_microblaze_0_Interrupt_Ack_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 1 );
-  signal NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
-  signal NLW_rst_clk_wiz_1_100M_peripheral_reset_UNCONNECTED : STD_LOGIC_VECTOR ( 0 to 0 );
   attribute BMM_INFO_PROCESSOR : string;
   attribute BMM_INFO_PROCESSOR of microblaze_0 : label is "microblaze-le > system microblaze_0_local_memory/dlmb_bram_if_cntlr";
   attribute KEEP_HIERARCHY : string;
@@ -2433,8 +2486,8 @@ architecture STRUCTURE of system is
   attribute X_INTERFACE_INFO of iclk : signal is "xilinx.com:signal:clock:1.0 CLK.ICLK CLK";
   attribute X_INTERFACE_PARAMETER : string;
   attribute X_INTERFACE_PARAMETER of iclk : signal is "XIL_INTERFACENAME CLK.ICLK, CLK_DOMAIN system_clk_in1_0, FREQ_HZ 100000000, FREQ_TOLERANCE_HZ 0, INSERT_VIP 0, PHASE 0.000";
-  attribute X_INTERFACE_INFO of uart_rxd : signal is "xilinx.com:interface:uart:1.0 uart ";
-  attribute X_INTERFACE_INFO of uart_txd : signal is "xilinx.com:interface:uart:1.0 uart ";
+  attribute X_INTERFACE_INFO of uart_rxd : signal is "xilinx.com:interface:uart:1.0 uart RxD";
+  attribute X_INTERFACE_INFO of uart_txd : signal is "xilinx.com:interface:uart:1.0 uart TxD";
 begin
   axi_uartlite_0_UART_RxD <= uart_rxd;
   clk_in1_0_1 <= iclk;
@@ -2534,11 +2587,14 @@ axi_uartlite_0: component system_axi_uartlite_0_0
       s_axi_wvalid => microblaze_0_axi_periph_M01_AXI_WVALID,
       tx => axi_uartlite_0_UART_TxD
     );
-clk_wiz_1: component system_clk_wiz_1_0
+h_clk_rst: entity work.h_clk_rst_imp_1D3DBPP
      port map (
-      clk_in1 => clk_in1_0_1,
-      locked => clk_wiz_1_locked,
-      oclk_out1 => microblaze_0_Clk
+      bus_struct_reset(0) => rst_clk_wiz_1_100M_bus_struct_reset(0),
+      iclk => clk_in1_0_1,
+      mb_debug_sys_rst => mdm_1_debug_sys_rst,
+      mb_reset => rst_clk_wiz_1_100M_mb_reset,
+      peripheral_aresetn(0) => rst_clk_wiz_1_100M_peripheral_aresetn(0),
+      slowest_sync_clk => microblaze_0_Clk
     );
 mdm_1: component system_mdm_1_0
      port map (
@@ -2779,22 +2835,5 @@ ropuf_0: component system_ropuf_0_0
       enable => axi_gpio_1_gpio_io_o(0),
       finalResult => ropuf_0_finalResult,
       rst => axi_gpio_2_gpio_io_o(0)
-    );
-rst_clk_wiz_1_100M: component system_rst_clk_wiz_1_100M_0
-     port map (
-      aux_reset_in => xlconstant_0_dout(0),
-      bus_struct_reset(0) => rst_clk_wiz_1_100M_bus_struct_reset(0),
-      dcm_locked => clk_wiz_1_locked,
-      ext_reset_in => xlconstant_0_dout(0),
-      interconnect_aresetn(0) => NLW_rst_clk_wiz_1_100M_interconnect_aresetn_UNCONNECTED(0),
-      mb_debug_sys_rst => mdm_1_debug_sys_rst,
-      mb_reset => rst_clk_wiz_1_100M_mb_reset,
-      peripheral_aresetn(0) => rst_clk_wiz_1_100M_peripheral_aresetn(0),
-      peripheral_reset(0) => NLW_rst_clk_wiz_1_100M_peripheral_reset_UNCONNECTED(0),
-      slowest_sync_clk => microblaze_0_Clk
-    );
-xlconstant_0: component system_xlconstant_0_0
-     port map (
-      dout(0) => xlconstant_0_dout(0)
     );
 end STRUCTURE;
