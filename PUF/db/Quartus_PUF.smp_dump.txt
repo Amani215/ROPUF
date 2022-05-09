@@ -1,0 +1,6 @@
+
+State Machine - |TSM_Controller|state
+Name state.idle state.active state.initial 
+state.initial 0 0 0 
+state.active 0 1 1 
+state.idle 1 0 1 

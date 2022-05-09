@@ -1,0 +1,94 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\asus\Desktop\PUF\simulation\modelsim
+Eand_gate
+Z1 w1649861988
+Z2 DPx3 std 6 textio 0 22 5>J:;AW>W0[[dW0I6EN1Q0
+Z3 DPx4 ieee 14 std_logic_1164 0 22 5=aWaoGZSMWIcH0i^f`XF1
+Z4 dC:\Users\asus\Desktop\PUF\simulation\modelsim
+Z5 8C:/Users/asus/Desktop/PUF/and_gate.vhd
+Z6 FC:/Users/asus/Desktop/PUF/and_gate.vhd
+l0
+L4
+VnjC><SRN3Caz3@_R22HDz0
+Z7 OV;C;10.1d;51
+31
+Z8 !s108 1649936784.461000
+Z9 !s90 -reportprogress|300|-93|-work|work|C:/Users/asus/Desktop/PUF/and_gate.vhd|
+Z10 !s107 C:/Users/asus/Desktop/PUF/and_gate.vhd|
+Z11 o-93 -work work -O0
+Z12 tExplicit 1
+!s100 N:aYjX;f:jJ=11zK9?Ac[3
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 8 and_gate 0 22 njC><SRN3Caz3@_R22HDz0
+l11
+L10
+V9<Ee8RTVa7W3>LOI=9_Y:1
+R7
+31
+R8
+R9
+R10
+R11
+R12
+!s100 bo=:?1WECa=F`a83G><;>3
+!i10b 1
+Einverter_gate
+Z13 w1649861829
+R2
+R3
+R4
+Z14 8C:/Users/asus/Desktop/PUF/inverter_gate.vhd
+Z15 FC:/Users/asus/Desktop/PUF/inverter_gate.vhd
+l0
+L4
+VmOH1YZ>=>NUakNcW;R8T11
+R7
+31
+Z16 !s108 1649936784.351000
+Z17 !s90 -reportprogress|300|-93|-work|work|C:/Users/asus/Desktop/PUF/inverter_gate.vhd|
+Z18 !s107 C:/Users/asus/Desktop/PUF/inverter_gate.vhd|
+R11
+R12
+!s100 7GAgj?2D]eL<50J8FjJHR2
+!i10b 1
+Abehavioral
+R2
+R3
+DEx4 work 13 inverter_gate 0 22 mOH1YZ>=>NUakNcW;R8T11
+l10
+L9
+Vk`7Pcdl`6zcNY8<hdCabS0
+R7
+31
+R16
+R17
+R18
+R11
+R12
+!s100 g3_XUBg_clUMBQKe3F_1`3
+!i10b 1
+Emultiplexer
+w1649862228
+R2
+R3
+R4
+8C:/Users/asus/Desktop/PUF/multiplexer.vhd
+FC:/Users/asus/Desktop/PUF/multiplexer.vhd
+l0
+L4
+VVR6XfbhC[=;aXAOgl3P2T1
+!s100 WljG?`cCMYZCPSg@hoa@k2
+R7
+31
+!i10b 1
+!s108 1649936784.523000
+!s90 -reportprogress|300|-93|-work|work|C:/Users/asus/Desktop/PUF/multiplexer.vhd|
+!s107 C:/Users/asus/Desktop/PUF/multiplexer.vhd|
+R11
+R12

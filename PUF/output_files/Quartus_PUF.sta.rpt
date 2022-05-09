@@ -1,0 +1,1078 @@
+TimeQuest Timing Analyzer report for Quartus_PUF
+Mon May 09 23:44:02 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'challenge[0]'
+ 12. Slow Model Setup: 'challenge[2]'
+ 13. Slow Model Hold: 'challenge[0]'
+ 14. Slow Model Hold: 'challenge[2]'
+ 15. Slow Model Minimum Pulse Width: 'challenge[0]'
+ 16. Slow Model Minimum Pulse Width: 'challenge[2]'
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Propagation Delay
+ 20. Minimum Propagation Delay
+ 21. Fast Model Setup Summary
+ 22. Fast Model Hold Summary
+ 23. Fast Model Recovery Summary
+ 24. Fast Model Removal Summary
+ 25. Fast Model Minimum Pulse Width Summary
+ 26. Fast Model Setup: 'challenge[0]'
+ 27. Fast Model Setup: 'challenge[2]'
+ 28. Fast Model Hold: 'challenge[0]'
+ 29. Fast Model Hold: 'challenge[2]'
+ 30. Fast Model Minimum Pulse Width: 'challenge[0]'
+ 31. Fast Model Minimum Pulse Width: 'challenge[2]'
+ 32. Clock to Output Times
+ 33. Minimum Clock to Output Times
+ 34. Propagation Delay
+ 35. Minimum Propagation Delay
+ 36. Multicorner Timing Analysis Summary
+ 37. Clock to Output Times
+ 38. Minimum Clock to Output Times
+ 39. Progagation Delay
+ 40. Minimum Progagation Delay
+ 41. Setup Transfers
+ 42. Hold Transfers
+ 43. Report TCCS
+ 44. Report RSKM
+ 45. Unconstrained Paths
+ 46. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Quartus_PUF                                                       ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C7                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 8      ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                                     ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+; Clock Name   ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets          ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+; challenge[0] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { challenge[0] } ;
+; challenge[2] ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { challenge[2] } ;
++--------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Slow Model Fmax Summary                                                                                     ;
++------------+-----------------+--------------+---------------------------------------------------------------+
+; Fmax       ; Restricted Fmax ; Clock Name   ; Note                                                          ;
++------------+-----------------+--------------+---------------------------------------------------------------+
+; 404.53 MHz ; 380.08 MHz      ; challenge[0] ; limit due to minimum period restriction (max I/O toggle rate) ;
+; 405.35 MHz ; 380.08 MHz      ; challenge[2] ; limit due to minimum period restriction (max I/O toggle rate) ;
++------------+-----------------+--------------+---------------------------------------------------------------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------------+
+; Slow Model Setup Summary              ;
++--------------+--------+---------------+
+; Clock        ; Slack  ; End Point TNS ;
++--------------+--------+---------------+
+; challenge[0] ; -1.472 ; -8.273        ;
+; challenge[2] ; -1.467 ; -8.238        ;
++--------------+--------+---------------+
+
+
++--------------------------------------+
+; Slow Model Hold Summary              ;
++--------------+-------+---------------+
+; Clock        ; Slack ; End Point TNS ;
++--------------+-------+---------------+
+; challenge[0] ; 0.291 ; 0.000         ;
+; challenge[2] ; 0.291 ; 0.000         ;
++--------------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++--------------+--------+----------------+
+; Clock        ; Slack  ; End Point TNS  ;
++--------------+--------+----------------+
+; challenge[0] ; -1.631 ; -13.871        ;
+; challenge[2] ; -1.631 ; -13.871        ;
++--------------+--------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'challenge[0]'                                                                                          ;
++--------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; -1.472 ; counter:c1|count[0] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.356      ;
+; -1.392 ; counter:c1|count[0] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.276      ;
+; -1.312 ; counter:c1|count[0] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.196      ;
+; -1.232 ; counter:c1|count[0] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.116      ;
+; -1.202 ; counter:c1|count[1] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.086      ;
+; -1.152 ; counter:c1|count[0] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.036      ;
+; -1.130 ; counter:c1|count[2] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.014      ;
+; -1.122 ; counter:c1|count[1] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 2.006      ;
+; -1.091 ; counter:c1|count[3] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.975      ;
+; -1.072 ; counter:c1|count[0] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.956      ;
+; -1.050 ; counter:c1|count[2] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.934      ;
+; -1.042 ; counter:c1|count[1] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.926      ;
+; -1.011 ; counter:c1|count[3] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.895      ;
+; -0.971 ; counter:c1|count[4] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.855      ;
+; -0.970 ; counter:c1|count[2] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.854      ;
+; -0.962 ; counter:c1|count[1] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.846      ;
+; -0.931 ; counter:c1|count[5] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.815      ;
+; -0.931 ; counter:c1|count[3] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.815      ;
+; -0.891 ; counter:c1|count[4] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.775      ;
+; -0.890 ; counter:c1|count[2] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.774      ;
+; -0.882 ; counter:c1|count[1] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.766      ;
+; -0.851 ; counter:c1|count[6] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.735      ;
+; -0.851 ; counter:c1|count[5] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.735      ;
+; -0.851 ; counter:c1|count[3] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.735      ;
+; -0.811 ; counter:c1|count[4] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.695      ;
+; -0.810 ; counter:c1|count[2] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.694      ;
+; -0.802 ; counter:c1|count[1] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.686      ;
+; -0.641 ; counter:c1|count[0] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.525      ;
+; -0.418 ; counter:c1|count[6] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.302      ;
+; -0.418 ; counter:c1|count[5] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.302      ;
+; -0.418 ; counter:c1|count[3] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.302      ;
+; -0.379 ; counter:c1|count[7] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.263      ;
+; -0.379 ; counter:c1|count[4] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.263      ;
+; -0.378 ; counter:c1|count[2] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.262      ;
+; -0.370 ; counter:c1|count[1] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 1.254      ;
+; 0.153  ; counter:c1|count[0] ; counter:c1|count[0] ; challenge[0] ; challenge[0] ; 1.000        ; -0.154     ; 0.731      ;
++--------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'challenge[2]'                                                                                          ;
++--------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack  ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++--------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; -1.467 ; counter:c2|count[0] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.351      ;
+; -1.387 ; counter:c2|count[0] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.271      ;
+; -1.307 ; counter:c2|count[0] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.191      ;
+; -1.227 ; counter:c2|count[0] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.111      ;
+; -1.202 ; counter:c2|count[1] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.086      ;
+; -1.147 ; counter:c2|count[0] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.031      ;
+; -1.130 ; counter:c2|count[2] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.014      ;
+; -1.122 ; counter:c2|count[1] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 2.006      ;
+; -1.091 ; counter:c2|count[3] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.975      ;
+; -1.067 ; counter:c2|count[0] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.951      ;
+; -1.050 ; counter:c2|count[2] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.934      ;
+; -1.042 ; counter:c2|count[1] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.926      ;
+; -1.011 ; counter:c2|count[3] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.895      ;
+; -0.971 ; counter:c2|count[4] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.855      ;
+; -0.970 ; counter:c2|count[2] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.854      ;
+; -0.962 ; counter:c2|count[1] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.846      ;
+; -0.931 ; counter:c2|count[5] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.815      ;
+; -0.931 ; counter:c2|count[3] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.815      ;
+; -0.891 ; counter:c2|count[4] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.775      ;
+; -0.890 ; counter:c2|count[2] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.774      ;
+; -0.882 ; counter:c2|count[1] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.766      ;
+; -0.851 ; counter:c2|count[6] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.735      ;
+; -0.851 ; counter:c2|count[5] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.735      ;
+; -0.851 ; counter:c2|count[3] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.735      ;
+; -0.811 ; counter:c2|count[4] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.695      ;
+; -0.810 ; counter:c2|count[2] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.694      ;
+; -0.802 ; counter:c2|count[1] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.686      ;
+; -0.636 ; counter:c2|count[0] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.520      ;
+; -0.418 ; counter:c2|count[6] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.302      ;
+; -0.418 ; counter:c2|count[5] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.302      ;
+; -0.418 ; counter:c2|count[3] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.302      ;
+; -0.379 ; counter:c2|count[7] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.263      ;
+; -0.379 ; counter:c2|count[4] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.263      ;
+; -0.378 ; counter:c2|count[2] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.262      ;
+; -0.370 ; counter:c2|count[1] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 1.254      ;
+; 0.153  ; counter:c2|count[0] ; counter:c2|count[0] ; challenge[2] ; challenge[2] ; 1.000        ; -0.154     ; 0.731      ;
++--------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'challenge[0]'                                                                                          ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; 0.291 ; counter:c1|count[0] ; counter:c1|count[0] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 0.731      ;
+; 0.814 ; counter:c1|count[1] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.254      ;
+; 0.822 ; counter:c1|count[2] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.262      ;
+; 0.823 ; counter:c1|count[4] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.263      ;
+; 0.823 ; counter:c1|count[7] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.263      ;
+; 0.862 ; counter:c1|count[3] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.302      ;
+; 0.862 ; counter:c1|count[5] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.302      ;
+; 0.862 ; counter:c1|count[6] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.302      ;
+; 1.085 ; counter:c1|count[0] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.525      ;
+; 1.246 ; counter:c1|count[1] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.686      ;
+; 1.254 ; counter:c1|count[2] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.694      ;
+; 1.255 ; counter:c1|count[4] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.695      ;
+; 1.295 ; counter:c1|count[3] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.735      ;
+; 1.295 ; counter:c1|count[6] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.735      ;
+; 1.295 ; counter:c1|count[5] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.735      ;
+; 1.326 ; counter:c1|count[1] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.766      ;
+; 1.334 ; counter:c1|count[2] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.774      ;
+; 1.335 ; counter:c1|count[4] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.775      ;
+; 1.375 ; counter:c1|count[3] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.815      ;
+; 1.375 ; counter:c1|count[5] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.815      ;
+; 1.406 ; counter:c1|count[1] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.846      ;
+; 1.414 ; counter:c1|count[2] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.854      ;
+; 1.415 ; counter:c1|count[4] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.855      ;
+; 1.455 ; counter:c1|count[3] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.895      ;
+; 1.486 ; counter:c1|count[1] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.926      ;
+; 1.494 ; counter:c1|count[2] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.934      ;
+; 1.516 ; counter:c1|count[0] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.956      ;
+; 1.535 ; counter:c1|count[3] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 1.975      ;
+; 1.566 ; counter:c1|count[1] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.006      ;
+; 1.574 ; counter:c1|count[2] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.014      ;
+; 1.596 ; counter:c1|count[0] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.036      ;
+; 1.646 ; counter:c1|count[1] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.086      ;
+; 1.676 ; counter:c1|count[0] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.116      ;
+; 1.756 ; counter:c1|count[0] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.196      ;
+; 1.836 ; counter:c1|count[0] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.276      ;
+; 1.916 ; counter:c1|count[0] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.154      ; 2.356      ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'challenge[2]'                                                                                          ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; 0.291 ; counter:c2|count[0] ; counter:c2|count[0] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 0.731      ;
+; 0.814 ; counter:c2|count[1] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.254      ;
+; 0.822 ; counter:c2|count[2] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.262      ;
+; 0.823 ; counter:c2|count[4] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.263      ;
+; 0.823 ; counter:c2|count[7] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.263      ;
+; 0.862 ; counter:c2|count[3] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.302      ;
+; 0.862 ; counter:c2|count[5] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.302      ;
+; 0.862 ; counter:c2|count[6] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.302      ;
+; 1.080 ; counter:c2|count[0] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.520      ;
+; 1.246 ; counter:c2|count[1] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.686      ;
+; 1.254 ; counter:c2|count[2] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.694      ;
+; 1.255 ; counter:c2|count[4] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.695      ;
+; 1.295 ; counter:c2|count[3] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.735      ;
+; 1.295 ; counter:c2|count[6] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.735      ;
+; 1.295 ; counter:c2|count[5] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.735      ;
+; 1.326 ; counter:c2|count[1] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.766      ;
+; 1.334 ; counter:c2|count[2] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.774      ;
+; 1.335 ; counter:c2|count[4] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.775      ;
+; 1.375 ; counter:c2|count[3] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.815      ;
+; 1.375 ; counter:c2|count[5] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.815      ;
+; 1.406 ; counter:c2|count[1] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.846      ;
+; 1.414 ; counter:c2|count[2] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.854      ;
+; 1.415 ; counter:c2|count[4] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.855      ;
+; 1.455 ; counter:c2|count[3] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.895      ;
+; 1.486 ; counter:c2|count[1] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.926      ;
+; 1.494 ; counter:c2|count[2] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.934      ;
+; 1.511 ; counter:c2|count[0] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.951      ;
+; 1.535 ; counter:c2|count[3] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 1.975      ;
+; 1.566 ; counter:c2|count[1] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.006      ;
+; 1.574 ; counter:c2|count[2] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.014      ;
+; 1.591 ; counter:c2|count[0] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.031      ;
+; 1.646 ; counter:c2|count[1] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.086      ;
+; 1.671 ; counter:c2|count[0] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.111      ;
+; 1.751 ; counter:c2|count[0] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.191      ;
+; 1.831 ; counter:c2|count[0] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.271      ;
+; 1.911 ; counter:c2|count[0] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.154      ; 2.351      ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'challenge[0]'                                                                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock        ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; challenge[0] ; Rise       ; challenge[0]               ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[0]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[0]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[1]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[1]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[2]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[2]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[3]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[3]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[4]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[4]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[5]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[5]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[6]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[6]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[7]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[7]        ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[0]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[0]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[1]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[1]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[2]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[2]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[3]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[3]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[4]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[4]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[5]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[5]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[6]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[6]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[7]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[7]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; mux1|Mux0|combout          ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; mux1|Mux0|combout          ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|inclk[0] ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|inclk[0] ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|outclk   ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; challenge[0]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; challenge[0]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~1|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~1|datad          ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'challenge[2]'                                                                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock        ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; -1.631 ; 1.000        ; 2.631          ; Port Rate        ; challenge[2] ; Rise       ; challenge[2]               ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[0]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[0]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[1]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[1]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[2]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[2]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[3]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[3]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[4]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[4]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[5]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[5]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[6]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[6]        ;
+; -0.765 ; 0.346        ; 1.111          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[7]        ;
+; -0.765 ; 0.346        ; 1.111          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[7]        ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[0]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[0]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[1]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[1]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[2]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[2]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[3]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[3]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[4]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[4]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[5]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[5]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[6]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[6]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[7]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[7]|clk            ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; mux2|Mux0|combout          ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; mux2|Mux0|combout          ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|inclk[0] ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|inclk[0] ;
+; 0.346  ; 0.346        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|outclk   ;
+; 0.346  ; 0.346        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; challenge[2]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; challenge[2]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~1|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~1|datad          ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-------------+--------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+--------------+--------+--------+------------+-----------------+
+; finalResult ; challenge[0] ; 13.343 ; 13.343 ; Fall       ; challenge[0]    ;
+; finalResult ; challenge[2] ; 14.478 ; 14.478 ; Fall       ; challenge[2]    ;
++-------------+--------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                               ;
++-------------+--------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+--------------+--------+--------+------------+-----------------+
+; finalResult ; challenge[0] ; 11.707 ; 11.707 ; Fall       ; challenge[0]    ;
+; finalResult ; challenge[2] ; 13.117 ; 13.117 ; Fall       ; challenge[2]    ;
++-------------+--------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; finalResult ;    ; 8.602 ; 8.602 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; finalResult ;    ; 8.602 ; 8.602 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++--------------------------------------+
+; Fast Model Setup Summary             ;
++--------------+-------+---------------+
+; Clock        ; Slack ; End Point TNS ;
++--------------+-------+---------------+
+; challenge[0] ; 0.064 ; 0.000         ;
+; challenge[2] ; 0.067 ; 0.000         ;
++--------------+-------+---------------+
+
+
++--------------------------------------+
+; Fast Model Hold Summary              ;
++--------------+-------+---------------+
+; Clock        ; Slack ; End Point TNS ;
++--------------+-------+---------------+
+; challenge[0] ; 0.163 ; 0.000         ;
+; challenge[2] ; 0.163 ; 0.000         ;
++--------------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++--------------+--------+----------------+
+; Clock        ; Slack  ; End Point TNS  ;
++--------------+--------+----------------+
+; challenge[0] ; -1.380 ; -10.212        ;
+; challenge[2] ; -1.380 ; -10.212        ;
++--------------+--------+----------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'challenge[0]'                                                                                         ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; 0.064 ; counter:c1|count[0] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.916      ;
+; 0.099 ; counter:c1|count[0] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.881      ;
+; 0.134 ; counter:c1|count[0] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.846      ;
+; 0.160 ; counter:c1|count[1] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.820      ;
+; 0.169 ; counter:c1|count[0] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.811      ;
+; 0.190 ; counter:c1|count[2] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.790      ;
+; 0.195 ; counter:c1|count[1] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.785      ;
+; 0.204 ; counter:c1|count[0] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.776      ;
+; 0.212 ; counter:c1|count[3] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.768      ;
+; 0.225 ; counter:c1|count[2] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.755      ;
+; 0.230 ; counter:c1|count[1] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.750      ;
+; 0.239 ; counter:c1|count[0] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.741      ;
+; 0.247 ; counter:c1|count[3] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.733      ;
+; 0.259 ; counter:c1|count[4] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.721      ;
+; 0.260 ; counter:c1|count[2] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.720      ;
+; 0.265 ; counter:c1|count[1] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.715      ;
+; 0.281 ; counter:c1|count[5] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.699      ;
+; 0.282 ; counter:c1|count[3] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.698      ;
+; 0.294 ; counter:c1|count[4] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.686      ;
+; 0.295 ; counter:c1|count[2] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.685      ;
+; 0.300 ; counter:c1|count[1] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.680      ;
+; 0.316 ; counter:c1|count[6] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.664      ;
+; 0.316 ; counter:c1|count[5] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.664      ;
+; 0.317 ; counter:c1|count[3] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.663      ;
+; 0.329 ; counter:c1|count[4] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.651      ;
+; 0.330 ; counter:c1|count[2] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.650      ;
+; 0.335 ; counter:c1|count[1] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.645      ;
+; 0.379 ; counter:c1|count[0] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.601      ;
+; 0.456 ; counter:c1|count[6] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.524      ;
+; 0.456 ; counter:c1|count[5] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.524      ;
+; 0.457 ; counter:c1|count[3] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.523      ;
+; 0.467 ; counter:c1|count[7] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.513      ;
+; 0.467 ; counter:c1|count[4] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.513      ;
+; 0.468 ; counter:c1|count[2] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.512      ;
+; 0.470 ; counter:c1|count[1] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.510      ;
+; 0.613 ; counter:c1|count[0] ; counter:c1|count[0] ; challenge[0] ; challenge[0] ; 1.000        ; -0.052     ; 0.367      ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'challenge[2]'                                                                                         ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; 0.067 ; counter:c2|count[0] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.913      ;
+; 0.102 ; counter:c2|count[0] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.878      ;
+; 0.137 ; counter:c2|count[0] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.843      ;
+; 0.160 ; counter:c2|count[1] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.820      ;
+; 0.172 ; counter:c2|count[0] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.808      ;
+; 0.190 ; counter:c2|count[2] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.790      ;
+; 0.195 ; counter:c2|count[1] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.785      ;
+; 0.207 ; counter:c2|count[0] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.773      ;
+; 0.212 ; counter:c2|count[3] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.768      ;
+; 0.225 ; counter:c2|count[2] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.755      ;
+; 0.230 ; counter:c2|count[1] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.750      ;
+; 0.242 ; counter:c2|count[0] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.738      ;
+; 0.247 ; counter:c2|count[3] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.733      ;
+; 0.259 ; counter:c2|count[4] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.721      ;
+; 0.260 ; counter:c2|count[2] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.720      ;
+; 0.265 ; counter:c2|count[1] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.715      ;
+; 0.281 ; counter:c2|count[5] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.699      ;
+; 0.282 ; counter:c2|count[3] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.698      ;
+; 0.294 ; counter:c2|count[4] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.686      ;
+; 0.295 ; counter:c2|count[2] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.685      ;
+; 0.300 ; counter:c2|count[1] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.680      ;
+; 0.316 ; counter:c2|count[6] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.664      ;
+; 0.316 ; counter:c2|count[5] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.664      ;
+; 0.317 ; counter:c2|count[3] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.663      ;
+; 0.329 ; counter:c2|count[4] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.651      ;
+; 0.330 ; counter:c2|count[2] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.650      ;
+; 0.335 ; counter:c2|count[1] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.645      ;
+; 0.382 ; counter:c2|count[0] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.598      ;
+; 0.456 ; counter:c2|count[6] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.524      ;
+; 0.456 ; counter:c2|count[5] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.524      ;
+; 0.457 ; counter:c2|count[3] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.523      ;
+; 0.467 ; counter:c2|count[7] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.513      ;
+; 0.467 ; counter:c2|count[4] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.513      ;
+; 0.468 ; counter:c2|count[2] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.512      ;
+; 0.470 ; counter:c2|count[1] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.510      ;
+; 0.613 ; counter:c2|count[0] ; counter:c2|count[0] ; challenge[2] ; challenge[2] ; 1.000        ; -0.052     ; 0.367      ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'challenge[0]'                                                                                          ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; 0.163 ; counter:c1|count[0] ; counter:c1|count[0] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.367      ;
+; 0.306 ; counter:c1|count[1] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.510      ;
+; 0.308 ; counter:c1|count[2] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.512      ;
+; 0.309 ; counter:c1|count[4] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.513      ;
+; 0.309 ; counter:c1|count[7] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.513      ;
+; 0.319 ; counter:c1|count[3] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.523      ;
+; 0.320 ; counter:c1|count[5] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.524      ;
+; 0.320 ; counter:c1|count[6] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.524      ;
+; 0.397 ; counter:c1|count[0] ; counter:c1|count[1] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.601      ;
+; 0.441 ; counter:c1|count[1] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.645      ;
+; 0.446 ; counter:c1|count[2] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.650      ;
+; 0.447 ; counter:c1|count[4] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.651      ;
+; 0.459 ; counter:c1|count[3] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.663      ;
+; 0.460 ; counter:c1|count[6] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.664      ;
+; 0.460 ; counter:c1|count[5] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.664      ;
+; 0.476 ; counter:c1|count[1] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.680      ;
+; 0.481 ; counter:c1|count[2] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.685      ;
+; 0.482 ; counter:c1|count[4] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.686      ;
+; 0.494 ; counter:c1|count[3] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.698      ;
+; 0.495 ; counter:c1|count[5] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.699      ;
+; 0.511 ; counter:c1|count[1] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.715      ;
+; 0.516 ; counter:c1|count[2] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.720      ;
+; 0.517 ; counter:c1|count[4] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.721      ;
+; 0.529 ; counter:c1|count[3] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.733      ;
+; 0.537 ; counter:c1|count[0] ; counter:c1|count[2] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.741      ;
+; 0.546 ; counter:c1|count[1] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.750      ;
+; 0.551 ; counter:c1|count[2] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.755      ;
+; 0.564 ; counter:c1|count[3] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.768      ;
+; 0.572 ; counter:c1|count[0] ; counter:c1|count[3] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.776      ;
+; 0.581 ; counter:c1|count[1] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.785      ;
+; 0.586 ; counter:c1|count[2] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.790      ;
+; 0.607 ; counter:c1|count[0] ; counter:c1|count[4] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.811      ;
+; 0.616 ; counter:c1|count[1] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.820      ;
+; 0.642 ; counter:c1|count[0] ; counter:c1|count[5] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.846      ;
+; 0.677 ; counter:c1|count[0] ; counter:c1|count[6] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.881      ;
+; 0.712 ; counter:c1|count[0] ; counter:c1|count[7] ; challenge[0] ; challenge[0] ; 0.000        ; 0.052      ; 0.916      ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'challenge[2]'                                                                                          ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; Slack ; From Node           ; To Node             ; Launch Clock ; Latch Clock  ; Relationship ; Clock Skew ; Data Delay ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+; 0.163 ; counter:c2|count[0] ; counter:c2|count[0] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.367      ;
+; 0.306 ; counter:c2|count[1] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.510      ;
+; 0.308 ; counter:c2|count[2] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.512      ;
+; 0.309 ; counter:c2|count[4] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.513      ;
+; 0.309 ; counter:c2|count[7] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.513      ;
+; 0.319 ; counter:c2|count[3] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.523      ;
+; 0.320 ; counter:c2|count[5] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.524      ;
+; 0.320 ; counter:c2|count[6] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.524      ;
+; 0.394 ; counter:c2|count[0] ; counter:c2|count[1] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.598      ;
+; 0.441 ; counter:c2|count[1] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.645      ;
+; 0.446 ; counter:c2|count[2] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.650      ;
+; 0.447 ; counter:c2|count[4] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.651      ;
+; 0.459 ; counter:c2|count[3] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.663      ;
+; 0.460 ; counter:c2|count[6] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.664      ;
+; 0.460 ; counter:c2|count[5] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.664      ;
+; 0.476 ; counter:c2|count[1] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.680      ;
+; 0.481 ; counter:c2|count[2] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.685      ;
+; 0.482 ; counter:c2|count[4] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.686      ;
+; 0.494 ; counter:c2|count[3] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.698      ;
+; 0.495 ; counter:c2|count[5] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.699      ;
+; 0.511 ; counter:c2|count[1] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.715      ;
+; 0.516 ; counter:c2|count[2] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.720      ;
+; 0.517 ; counter:c2|count[4] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.721      ;
+; 0.529 ; counter:c2|count[3] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.733      ;
+; 0.534 ; counter:c2|count[0] ; counter:c2|count[2] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.738      ;
+; 0.546 ; counter:c2|count[1] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.750      ;
+; 0.551 ; counter:c2|count[2] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.755      ;
+; 0.564 ; counter:c2|count[3] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.768      ;
+; 0.569 ; counter:c2|count[0] ; counter:c2|count[3] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.773      ;
+; 0.581 ; counter:c2|count[1] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.785      ;
+; 0.586 ; counter:c2|count[2] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.790      ;
+; 0.604 ; counter:c2|count[0] ; counter:c2|count[4] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.808      ;
+; 0.616 ; counter:c2|count[1] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.820      ;
+; 0.639 ; counter:c2|count[0] ; counter:c2|count[5] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.843      ;
+; 0.674 ; counter:c2|count[0] ; counter:c2|count[6] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.878      ;
+; 0.709 ; counter:c2|count[0] ; counter:c2|count[7] ; challenge[2] ; challenge[2] ; 0.000        ; 0.052      ; 0.913      ;
++-------+---------------------+---------------------+--------------+--------------+--------------+------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'challenge[0]'                                                                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock        ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; challenge[0] ; Rise       ; challenge[0]               ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[0]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[0]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[1]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[1]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[2]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[2]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[3]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[3]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[4]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[4]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[5]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[5]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[6]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[6]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[0] ; Fall       ; counter:c1|count[7]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; counter:c1|count[7]        ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[0]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[0]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[1]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[1]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[2]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[2]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[3]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[3]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[4]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[4]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[5]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[5]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[6]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[6]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; c1|count[7]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; c1|count[7]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; mux1|Mux0|combout          ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; mux1|Mux0|combout          ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|inclk[0] ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|inclk[0] ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|outclk   ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Fall       ; mux1|Mux0~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; challenge[0]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; challenge[0]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[0] ; Rise       ; mux1|Mux0~1|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[0] ; Rise       ; mux1|Mux0~1|datad          ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'challenge[2]'                                                                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock        ; Clock Edge ; Target                     ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; challenge[2] ; Rise       ; challenge[2]               ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[0]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[0]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[1]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[1]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[2]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[2]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[3]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[3]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[4]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[4]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[5]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[5]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[6]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[6]        ;
+; -0.552 ; 0.448        ; 1.000          ; High Pulse Width ; challenge[2] ; Fall       ; counter:c2|count[7]        ;
+; -0.552 ; 0.448        ; 1.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; counter:c2|count[7]        ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[0]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[0]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[1]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[1]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[2]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[2]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[3]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[3]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[4]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[4]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[5]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[5]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[6]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[6]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; c2|count[7]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; c2|count[7]|clk            ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; mux2|Mux0|combout          ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; mux2|Mux0|combout          ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|inclk[0] ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|inclk[0] ;
+; 0.448  ; 0.448        ; 0.000          ; High Pulse Width ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|outclk   ;
+; 0.448  ; 0.448        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Fall       ; mux2|Mux0~clkctrl|outclk   ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; challenge[2]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; challenge[2]|combout       ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0|datac            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0|datad            ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~0|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~0|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~1|combout        ;
+; 0.500  ; 0.500        ; 0.000          ; High Pulse Width ; challenge[2] ; Rise       ; mux2|Mux0~1|datad          ;
+; 0.500  ; 0.500        ; 0.000          ; Low Pulse Width  ; challenge[2] ; Rise       ; mux2|Mux0~1|datad          ;
++--------+--------------+----------------+------------------+--------------+------------+----------------------------+
+
+
++---------------------------------------------------------------------------+
+; Clock to Output Times                                                     ;
++-------------+--------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+--------------+-------+-------+------------+-----------------+
+; finalResult ; challenge[0] ; 6.034 ; 6.034 ; Fall       ; challenge[0]    ;
+; finalResult ; challenge[2] ; 6.465 ; 6.465 ; Fall       ; challenge[2]    ;
++-------------+--------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-------------+--------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+--------------+-------+-------+------------+-----------------+
+; finalResult ; challenge[0] ; 5.443 ; 5.443 ; Fall       ; challenge[0]    ;
+; finalResult ; challenge[2] ; 5.992 ; 5.992 ; Fall       ; challenge[2]    ;
++-------------+--------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Propagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; finalResult ;    ; 3.955 ; 3.955 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Propagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; finalResult ;    ; 3.955 ; 3.955 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                           ;
++------------------+---------+-------+----------+---------+---------------------+
+; Clock            ; Setup   ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+---------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -1.472  ; 0.163 ; N/A      ; N/A     ; -1.631              ;
+;  challenge[0]    ; -1.472  ; 0.163 ; N/A      ; N/A     ; -1.631              ;
+;  challenge[2]    ; -1.467  ; 0.163 ; N/A      ; N/A     ; -1.631              ;
+; Design-wide TNS  ; -16.511 ; 0.0   ; 0.0      ; 0.0     ; -27.742             ;
+;  challenge[0]    ; -8.273  ; 0.000 ; N/A      ; N/A     ; -13.871             ;
+;  challenge[2]    ; -8.238  ; 0.000 ; N/A      ; N/A     ; -13.871             ;
++------------------+---------+-------+----------+---------+---------------------+
+
+
++-----------------------------------------------------------------------------+
+; Clock to Output Times                                                       ;
++-------------+--------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port   ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+--------------+--------+--------+------------+-----------------+
+; finalResult ; challenge[0] ; 13.343 ; 13.343 ; Fall       ; challenge[0]    ;
+; finalResult ; challenge[2] ; 14.478 ; 14.478 ; Fall       ; challenge[2]    ;
++-------------+--------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                             ;
++-------------+--------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port   ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+--------------+-------+-------+------------+-----------------+
+; finalResult ; challenge[0] ; 5.443 ; 5.443 ; Fall       ; challenge[0]    ;
+; finalResult ; challenge[2] ; 5.992 ; 5.992 ; Fall       ; challenge[2]    ;
++-------------+--------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------+
+; Progagation Delay                                  ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; finalResult ;    ; 8.602 ; 8.602 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++----------------------------------------------------+
+; Minimum Progagation Delay                          ;
++------------+-------------+----+-------+-------+----+
+; Input Port ; Output Port ; RR ; RF    ; FR    ; FF ;
++------------+-------------+----+-------+-------+----+
+; rst        ; finalResult ;    ; 3.955 ; 3.955 ;    ;
++------------+-------------+----+-------+-------+----+
+
+
++-------------------------------------------------------------------------+
+; Setup Transfers                                                         ;
++--------------+--------------+----------+----------+----------+----------+
+; From Clock   ; To Clock     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------+--------------+----------+----------+----------+----------+
+; challenge[0] ; challenge[0] ; 0        ; 0        ; 0        ; 36       ;
+; challenge[2] ; challenge[2] ; 0        ; 0        ; 0        ; 36       ;
++--------------+--------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------------+
+; Hold Transfers                                                          ;
++--------------+--------------+----------+----------+----------+----------+
+; From Clock   ; To Clock     ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++--------------+--------------+----------+----------+----------+----------+
+; challenge[0] ; challenge[0] ; 0        ; 0        ; 0        ; 36       ;
+; challenge[2] ; challenge[2] ; 0        ; 0        ; 0        ; 36       ;
++--------------+--------------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 1     ; 1    ;
+; Unconstrained Input Port Paths  ; 17    ; 17   ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 17    ; 17   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Mon May 09 23:44:01 2022
+Info: Command: quartus_sta Quartus_PUF -c Quartus_PUF
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Quartus_PUF.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name challenge[0] challenge[0]
+    Info (332105): create_clock -period 1.000 -name challenge[2] challenge[2]
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro2|\inst_delay_lines:3:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro2|\inst_delay_lines:3:inst_delay_line|andg|output|dataa"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro2|\inst_delay_lines:2:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro2|\inst_delay_lines:2:inst_delay_line|andg|output|datac"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro2|\inst_delay_lines:1:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro2|\inst_delay_lines:1:inst_delay_line|andg|output|datab"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro2|\inst_delay_lines:0:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro2|\inst_delay_lines:0:inst_delay_line|andg|output|datab"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro1|\inst_delay_lines:3:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro1|\inst_delay_lines:3:inst_delay_line|andg|output|dataa"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro1|\inst_delay_lines:2:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro1|\inst_delay_lines:2:inst_delay_line|andg|output|datac"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro1|\inst_delay_lines:1:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro1|\inst_delay_lines:1:inst_delay_line|andg|output|datab"
+Warning (332125): Found combinational loop of 2 nodes
+    Warning (332126): Node "ro1|\inst_delay_lines:0:inst_delay_line|andg|output|combout"
+    Warning (332126): Node "ro1|\inst_delay_lines:0:inst_delay_line|andg|output|datab"
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: mux1|Mux0~0  from: datad  to: combout
+    Info (332098): Cell: mux1|Mux0~1  from: datad  to: combout
+    Info (332098): Cell: mux2|Mux0~0  from: datad  to: combout
+    Info (332098): Cell: mux2|Mux0~1  from: datad  to: combout
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -1.472
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.472        -8.273 challenge[0] 
+    Info (332119):    -1.467        -8.238 challenge[2] 
+Info (332146): Worst-case hold slack is 0.291
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.291         0.000 challenge[0] 
+    Info (332119):     0.291         0.000 challenge[2] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -1.631
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.631       -13.871 challenge[0] 
+    Info (332119):    -1.631       -13.871 challenge[2] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332097): The following timing edges are non-unate.  TimeQuest will assume pos-unate behavior for these edges in the clock network.
+    Info (332098): Cell: mux1|Mux0~0  from: datad  to: combout
+    Info (332098): Cell: mux1|Mux0~1  from: datad  to: combout
+    Info (332098): Cell: mux2|Mux0~0  from: datad  to: combout
+    Info (332098): Cell: mux2|Mux0~1  from: datad  to: combout
+Info (332146): Worst-case setup slack is 0.064
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.064         0.000 challenge[0] 
+    Info (332119):     0.067         0.000 challenge[2] 
+Info (332146): Worst-case hold slack is 0.163
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.163         0.000 challenge[0] 
+    Info (332119):     0.163         0.000 challenge[2] 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case minimum pulse width slack is -1.380
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -1.380       -10.212 challenge[0] 
+    Info (332119):    -1.380       -10.212 challenge[2] 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 28 warnings
+    Info: Peak virtual memory: 4536 megabytes
+    Info: Processing ended: Mon May 09 23:44:02 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

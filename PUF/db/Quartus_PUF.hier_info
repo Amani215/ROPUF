@@ -1,0 +1,338 @@
+|ropuf
+enable => ring_oscillator:ro1.enable
+enable => ring_oscillator:ro2.enable
+challenge[0] => multiplexer:mux1.sel[0]
+challenge[1] => multiplexer:mux1.sel[1]
+challenge[2] => multiplexer:mux2.sel[0]
+challenge[3] => multiplexer:mux2.sel[1]
+rst => counter:c1.rst
+rst => counter:c2.rst
+rst => comparator:comp.rst
+finalResult <= comparator:comp.output
+
+
+|ropuf|ring_oscillator:ro1
+enable => delay_line:inst_delay_lines:0:inst_delay_line.enable
+enable => delay_line:inst_delay_lines:1:inst_delay_line.enable
+enable => delay_line:inst_delay_lines:2:inst_delay_line.enable
+enable => delay_line:inst_delay_lines:3:inst_delay_line.enable
+output[0] <= delay_line:inst_delay_lines:0:inst_delay_line.output
+output[1] <= delay_line:inst_delay_lines:1:inst_delay_line.output
+output[2] <= delay_line:inst_delay_lines:2:inst_delay_line.output
+output[3] <= delay_line:inst_delay_lines:3:inst_delay_line.output
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:0:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:0:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:0:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:0:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:0:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:1:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:1:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:1:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:1:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:1:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:2:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:2:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:2:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:2:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:2:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:3:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:3:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:3:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:3:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro1|delay_line:\inst_delay_lines:3:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|multiplexer:mux1
+data[0] => Mux0.IN3
+data[1] => Mux0.IN2
+data[2] => Mux0.IN1
+data[3] => Mux0.IN0
+sel[0] => Mux0.IN5
+sel[1] => Mux0.IN4
+output <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|counter:c1
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+rst => count[3].ACLR
+rst => count[4].ACLR
+rst => count[5].ACLR
+rst => count[6].ACLR
+rst => count[7].ACLR
+output[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2
+enable => delay_line:inst_delay_lines:0:inst_delay_line.enable
+enable => delay_line:inst_delay_lines:1:inst_delay_line.enable
+enable => delay_line:inst_delay_lines:2:inst_delay_line.enable
+enable => delay_line:inst_delay_lines:3:inst_delay_line.enable
+output[0] <= delay_line:inst_delay_lines:0:inst_delay_line.output
+output[1] <= delay_line:inst_delay_lines:1:inst_delay_line.output
+output[2] <= delay_line:inst_delay_lines:2:inst_delay_line.output
+output[3] <= delay_line:inst_delay_lines:3:inst_delay_line.output
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:0:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:0:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:0:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:0:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:0:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:1:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:1:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:1:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:1:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:1:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:2:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:2:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:2:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:2:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:2:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:3:inst_delay_line
+enable => And_gate:andg.in1
+output <= inverter_gate:inst_inverter_chain:3:inst_inverter.output
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:3:inst_delay_line|And_gate:andg
+in1 => output.IN0
+in2 => output.IN1
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:3:inst_delay_line|inverter_gate:\inst_inverter_chain:1:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:3:inst_delay_line|inverter_gate:\inst_inverter_chain:2:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|ring_oscillator:ro2|delay_line:\inst_delay_lines:3:inst_delay_line|inverter_gate:\inst_inverter_chain:3:inst_inverter
+input => output.DATAIN
+output <= input.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|multiplexer:mux2
+data[0] => Mux0.IN3
+data[1] => Mux0.IN2
+data[2] => Mux0.IN1
+data[3] => Mux0.IN0
+sel[0] => Mux0.IN5
+sel[1] => Mux0.IN4
+output <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|counter:c2
+clk => count[0].CLK
+clk => count[1].CLK
+clk => count[2].CLK
+clk => count[3].CLK
+clk => count[4].CLK
+clk => count[5].CLK
+clk => count[6].CLK
+clk => count[7].CLK
+rst => count[0].ACLR
+rst => count[1].ACLR
+rst => count[2].ACLR
+rst => count[3].ACLR
+rst => count[4].ACLR
+rst => count[5].ACLR
+rst => count[6].ACLR
+rst => count[7].ACLR
+output[0] <= count[0].DB_MAX_OUTPUT_PORT_TYPE
+output[1] <= count[1].DB_MAX_OUTPUT_PORT_TYPE
+output[2] <= count[2].DB_MAX_OUTPUT_PORT_TYPE
+output[3] <= count[3].DB_MAX_OUTPUT_PORT_TYPE
+output[4] <= count[4].DB_MAX_OUTPUT_PORT_TYPE
+output[5] <= count[5].DB_MAX_OUTPUT_PORT_TYPE
+output[6] <= count[6].DB_MAX_OUTPUT_PORT_TYPE
+output[7] <= count[7].DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ropuf|comparator:comp
+in1[0] => LessThan0.IN8
+in1[1] => LessThan0.IN7
+in1[2] => LessThan0.IN6
+in1[3] => LessThan0.IN5
+in1[4] => LessThan0.IN4
+in1[5] => LessThan0.IN3
+in1[6] => LessThan0.IN2
+in1[7] => LessThan0.IN1
+in2[0] => LessThan0.IN16
+in2[1] => LessThan0.IN15
+in2[2] => LessThan0.IN14
+in2[3] => LessThan0.IN13
+in2[4] => LessThan0.IN12
+in2[5] => LessThan0.IN11
+in2[6] => LessThan0.IN10
+in2[7] => LessThan0.IN9
+rst => output.OUTPUTSELECT
+output <= output.DB_MAX_OUTPUT_PORT_TYPE
+
+
